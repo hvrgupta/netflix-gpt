@@ -1,10 +1,11 @@
-import './App.css'
+
+import Body from './components/Body'
 
 function App() {
   return (
-      <div>
-        <h1>Namaste Everyone, Let's build Netflix GPT</h1>
-      </div>
+    <div>
+      <Body />
+    </div>
   )
 }
 
