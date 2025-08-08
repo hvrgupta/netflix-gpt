@@ -3,9 +3,9 @@ import Header from "./Header"
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateCurrentUser, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { netflix_bg } from "../utils/constants";
 
 const Login = () => {
 
@@ -15,7 +15,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
-  const navigate = useNavigate(); 
   const dispatch = useDispatch();
 
   const handleBtnClick = () => {
@@ -42,7 +41,6 @@ const Login = () => {
                       email: email,
                       displayName: displayName
                   }))
-                  navigate("/browse");
               }).catch((err) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -60,7 +58,6 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -75,7 +72,7 @@ const Login = () => {
         <div>
         <Header />
         <div className="absolute">
-          <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_small.jpg" alt="background" />
+          <img src={netflix_bg} alt="background" />
         </div>
         <div className="absolute w-full">
           <form onSubmit={(e) => e.preventDefault()} className="p-8 w-3/12 relative bg-black/80 mx-auto my-36">
@@ -89,7 +86,11 @@ const Login = () => {
               <p className="text-red-500 text-sm">{errorMsg}</p>
             )}
             <button className="p-4 my-4 w-full bg-red-700 text-white rounded-sm" onClick={handleBtnClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
-            <p className="py-4 text-white">{isSignIn ? "New to Netflix?" : "Already registered!"} <a onClick={() => setIsSignIn(!isSignIn)} className="text-blue-500" href="#">{isSignIn ? "Sign Up Now!" : "Sign In Now!"}</a></p>
+            <p className="py-4 text-white">{isSignIn ? "New User?" : "Already registered!"} <a onClick={() => setIsSignIn(!isSignIn)} className="text-blue-500" href="#">{isSignIn ? "Sign Up Now!" : "Sign In Now!"}</a></p>
+          
+            <p className="mt-4 text-xs text-gray-400 text-center font-bold">
+              This site is an educational project and is not affiliated with or endorsed by Netflix.
+            </p>
           </form>
         </div>
       </div>
