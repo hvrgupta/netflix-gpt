@@ -3,12 +3,16 @@ const VideoTitle = (props) => {
     const overview = props.overview;
 
     return (
-        <div className="w-screen aspect-video px-24 absolute text-white bg-gradient-to-r from-black pt-[20%]">
-            <h1 className="text-6xl font-bold">{title}</h1>
-            <p className="py-6 text-l w-1/4">{overview}</p>
-            <div className="m-2 font-bold">
-                <button className="text-white bg-red-500 p-3 px-5 rounded-md mx-2 bg-oapcity-50">Play ▷</button>
-                <button className="text-white bg-red-500 p-3 px-5 rounded-md mx-2 bg-oapcity-50" >ⓘ More Info</button>
+        <div className="absolute top-0 left-0 w-full h-full px-24 text-white bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center z-10">
+            <h1 className="text-6xl font-bold mb-4">{title}</h1>
+            <p className="py-6 text-lg w-1/4 mb-6">{overview}</p>
+            <div className="flex gap-4">
+                <button className="text-white bg-red-600 hover:bg-red-700 p-3 px-8 rounded-md font-bold transition-colors duration-200">
+                    Play ▷
+                </button>
+                <button className="text-white bg-gray-600 hover:bg-gray-700 p-3 px-8 rounded-md font-bold transition-colors duration-200">
+                    ⓘ More Info
+                </button>
             </div>
         </div>
     )

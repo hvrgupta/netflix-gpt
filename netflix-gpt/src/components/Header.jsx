@@ -14,6 +14,7 @@ const Header = () => {
 
   const handleSignout = () => {
     signOut(auth).then(() => {
+      dispatch(removeUser());
     }).catch((error) => {
       navigate("/error");
     });
@@ -39,9 +40,19 @@ const Header = () => {
   },[]);
 
   return (
-      <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between">
+      <div className="absolute px-8 py-4 bg-gradient-to-b from-black z-20 w-full flex justify-between items-center">
         <img className="w-40" src={logo} alt="logo" />
-        {user && <button className="font-bold text-white" onClick={handleSignout}>Sign out</button>}
+        {user && (
+          <div className="flex items-center gap-4">
+            <span className="text-white text-sm">{user.email}</span>
+            <button 
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold transition-colors duration-200" 
+              onClick={handleSignout}
+            >
+              Sign out
+            </button>
+          </div>
+        )}
       </div>
   )
 }

@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Custom scrollbar hiding */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+/* Horizontal scrolling improvements */
+.overflow-x-scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+button:focus {
+    outline: 2px solid #ef4444;
+    outline-offset: 2px;
+}
+
+/* Image loading optimization */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Ensure flex items don't shrink */
+.flex-shrink-0 {
+    flex-shrink: 0;
+}

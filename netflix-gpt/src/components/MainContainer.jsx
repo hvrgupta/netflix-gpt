@@ -11,10 +11,12 @@ const MainContainer = () => {
     
     const { original_title, overview, id} = mainMovie
     
-    return (<div className="">
-        <VideoTitle title={original_title} overview={overview}/>
-        <VideoBackground id={id}/>
-    </div>)
+    return (
+        <div className="relative w-full">
+            <VideoBackground id={id}/>
+            <VideoTitle title={original_title} overview={overview}/>
+        </div>
+    )
 }
 
 export default MainContainer;
