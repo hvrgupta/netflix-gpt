@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailerVideo } from "../utils/moviesSlice";
 
 const useMovieVideo = (id) => {
 
     const [trailer, setTrailer] = useState(null);
     const dispatch = useDispatch();
+
+    const trailerVideo = useSelector((store) => store.movies.trailerVideo);
 
     const getMovieVideoInfo = async(id) => {
         try {
@@ -21,11 +23,16 @@ const useMovieVideo = (id) => {
         }
     }
 
+
     useEffect(() => {
-        if(id) {
+        // Only fetch if trailer is not available
+        if(!trailerVideo) {
             getMovieVideoInfo(id);
+        } else {
+            // If trailer exists in store, use it
+            setTrailer(trailerVideo);
         }
-    },[id])
+    },[id, trailerVideo])
 
     return trailer;
 }

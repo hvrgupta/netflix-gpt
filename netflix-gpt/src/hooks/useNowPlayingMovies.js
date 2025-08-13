@@ -1,10 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS, NOW_PLAYING_MOVIES } from "../utils/constants";
 import { addNowPlayingMovies } from "../utils/moviesSlice";
 import { useEffect } from "react";
 
 const useNowPlayingMovies = () => {
     const dispatch = useDispatch();
+    const nowPlayingMovies = useSelector((store) => store.movies.nowPlayingMovies);
 
     const getNowPlayingMovie = async() => {
       const data = await fetch(NOW_PLAYING_MOVIES+"?page=1",API_OPTIONS);
@@ -13,8 +14,11 @@ const useNowPlayingMovies = () => {
     }
     
     useEffect(() => {
-      getNowPlayingMovie();
-    },[])
+      // Only fetch if data is not already available
+      if (!nowPlayingMovies) {
+        getNowPlayingMovie();
+      }
+    },[nowPlayingMovies])
 }
 
 export default useNowPlayingMovies;
