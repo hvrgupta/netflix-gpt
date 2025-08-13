@@ -15,7 +15,6 @@ A modern, responsive Netflix clone with AI-powered movie recommendations using G
 - **Netflix-like UI/UX** - Familiar interface with modern design
 - **User Authentication** - Secure sign-up/sign-in with Firebase
 - **Movie Browsing** - Browse Now Playing, Popular, Top Rated, and Upcoming movies
-- **Movie Trailers** - Watch movie trailers directly in the app
 - **Responsive Design** - Optimized for all devices (mobile, tablet, desktop)
 
 ### 🚀 Advanced Features
@@ -23,7 +22,6 @@ A modern, responsive Netflix clone with AI-powered movie recommendations using G
 - **Smart Caching** - Efficient data management with Redux
 - **Smooth Animations** - Hover effects and transitions
 - **Horizontal Scrolling** - Netflix-style movie carousels
-- **Background Videos** - Dynamic video backgrounds
 - **Search Functionality** - AI-powered movie search
 
 ## 🛠️ Tech Stack
@@ -44,19 +42,6 @@ A modern, responsive Netflix clone with AI-powered movie recommendations using G
 - **ESLint** - Code linting
 - **React Router** - Client-side routing
 - **Custom Hooks** - Reusable logic
-
-## 📱 Screenshots
-
-### Desktop View
-- Netflix-style homepage with featured movie
-- Movie categories with horizontal scrolling
-- AI search interface
-- User authentication
-
-### Mobile View
-- Responsive design optimized for touch
-- Adaptive layouts for small screens
-- Touch-friendly navigation
 
 ## 🚀 Getting Started
 
@@ -205,7 +190,6 @@ netflix-gpt/
 
 - **Redux caching** - Prevents unnecessary API calls
 - **Lazy loading** - Efficient component loading
-- **Image optimization** - Optimized movie posters
 - **Responsive images** - Adaptive image sizing
 - **Smooth scrolling** - Enhanced user experience
 
@@ -240,44 +224,6 @@ npm run build
 npm run build
 firebase deploy
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Netflix** - UI/UX inspiration
-- **TMDB** - Movie database API
-- **OpenAI** - GPT-4 API
-- **Firebase** - Authentication and hosting
-- **Tailwind CSS** - Styling framework
-
-## 📞 Support
-
-If you have any questions or need help:
-- Create an issue in the repository
-- Contact: your-email@example.com
-- Documentation: [Wiki](link-to-wiki)
-
-## 🔄 Changelog
-
-### v1.0.0 (Current)
-- ✅ Initial release
-- ✅ AI-powered movie recommendations
-- ✅ Responsive design
-- ✅ User authentication
-- ✅ Movie browsing features
-- ✅ Trailer integration
-
 ---
 
 **Note**: This is an educational project and is not affiliated with or endorsed by Netflix.
